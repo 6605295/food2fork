@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-
+import Loading from "../Components/Loading";
 import { Link } from "react-router-dom";
+
 class Singlerecipepage extends Component {
   constructor(props) {
     super(props);
@@ -41,17 +42,7 @@ class Singlerecipepage extends Component {
     } = this.state.recipe;
 
     if (this.state.loading) {
-      return (
-        <div className="container">
-          <div className="row my-5">
-            <div className="col-md-10 mx-auto">
-              <h1 className="text-center text-orange text-capitalize">
-                loading recipe . . . .
-              </h1>
-            </div>
-          </div>
-        </div>
-      );
+      return <Loading />;
     }
 
     return (

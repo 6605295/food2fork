@@ -4,6 +4,10 @@
 .text-bold {
   font-weight: bold;
 }
+.text-slanted {
+  font-family: "Courgette", cursive !important;
+}
+
 .text-orange {
   color: #f15025;
 }

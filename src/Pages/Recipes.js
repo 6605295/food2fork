@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Search from "../Components/Search";
 import RecipeList from "../Components/RecipeList";
+import Loading from "../Components/Loading";
 class Recipes extends Component {
   constructor(props) {
     super(props);
@@ -11,6 +12,7 @@ class Recipes extends Component {
       base_url: "https://recipesapi.herokuapp.com/api/search",
       query: "?q=",
       error: "",
+      loading: true,
     };
     this.getrecipeData = this.getrecipeData.bind(this);
   }
@@ -25,7 +27,7 @@ class Recipes extends Component {
             "sorry but your search did not return any recipes, please try again or press search icon for the most popular recipes",
         });
       } else {
-        this.setState({ recipes: jsondata.recipes, error: "" });
+        this.setState({ recipes: jsondata.recipes, error: "", loading: false });
       }
     } catch (error) {
       console.log(error);
@@ -70,7 +72,13 @@ class Recipes extends Component {
             </div>
           </section>
         ) : (
-          <RecipeList recipes={this.state.recipes}></RecipeList>
+          [
+            this.state.loading ? (
+              <Loading />
+            ) : (
+              <RecipeList recipes={this.state.recipes}></RecipeList>
+            ),
+          ]
         )}
       </React.Fragment>
     );

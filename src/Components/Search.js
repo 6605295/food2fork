@@ -6,7 +6,7 @@ class Search extends Component {
       <div className="container">
         <div className="row">
           <div className="col-10 mx-auto">
-            <h1 className="text-center text-capitalize my-3">
+            <h1 className="text-center text-capitalize my-5 text-slanted">
               search recipes with <span className="text-orange">food2Fork</span>
             </h1>
             <form onSubmit={handleSubmit}>
