@@ -1,6 +1,5 @@
 import React from "react";
-import FadeIn from "react-fade-in";
-import Lottie from "react-lottie";
+
 import ReactLoading from "react-loading";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 export default class Loading extends React.Component {
